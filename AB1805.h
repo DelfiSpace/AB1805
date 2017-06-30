@@ -86,28 +86,6 @@
 #define AM						0x00
 #define PM						0x20
 
-//Time settings (zero order)
-#define ZERO					0x00
-#define ONE						0x01
-#define TWO						0x02
-#define THREE					0x03
-#define FOUR					0x04
-#define FIVE					0x05
-#define SIX						0x06
-#define SEVEN					0x07
-#define EIGHT					0x08
-#define NINE					0x09
- 
-//Time settings (tenth order)
-#define TEN						0x10
-#define TWENTY					0x20
-#define THIRTY					0x30
-#define FOURTY					0x40
-#define FIFTY					0x50
-#define SIXTY					0x60
-#define SEVENTY					0x70
-#define EIGHTY					0x80
-#define NINETY					0x90
 
 class AB1805
 
@@ -124,10 +102,11 @@ public:
 	
 	void init(unsigned char time_format);
 	void init_int();
-	void init_time(unsigned char year, unsigned char month, unsigned char date, unsigned char day_of_week, unsigned char hr, unsigned char min, unsigned char sec, unsigned char hundredth_sec);
+	void init_time(unsigned char * init_time);
 	void init_time_done();
 	unsigned char get_time();
-	unsigned char conv_time(unsigned char val);
+	unsigned char hex2dec(unsigned char val);
+	unsigned char dec2hex(unsigned char val);
 	unsigned char get_status();
 	
 	// read and write from the register
