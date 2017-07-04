@@ -60,11 +60,6 @@ void AB1805::init_int()
  *   unsigned char init_time[6]			seconds
  *	 unsigned char init_time[7]			hundredth of second 
  *
- * 	 NOTE: 
- *   1. Initialization parameters can be found in "AB1805.h" under time settings
- *   2. All the input parameters except day_of_week require a combination  
- *      of zero order and tenth order time settings Eg: FOURTY | THREE
- *
  */
  void AB1805::init_time(unsigned char * init_time)
 {	
